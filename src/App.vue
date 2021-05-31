@@ -2,17 +2,17 @@
   <div id="app">
     
     <router-view/>
-    <main-nav-bar-down/>
+    <nav-bar-down/>
   </div>
 </template>
 
 <script>
-import mainNavBarDown from './components/content/mainNavBarDown.vue'
+import navBarDown from './components/common/navBarDown.vue'
 
 export default {
   name: 'app',
   components: {
-    mainNavBarDown
+    navBarDown
   }
 }
 </script>

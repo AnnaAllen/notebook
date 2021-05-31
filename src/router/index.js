@@ -4,6 +4,8 @@ import VueRouter from 'vue-router'
 //懒加载
 const Home =() => import('../views/Home.vue')
 const About =() => import('../views/About.vue')
+const Chat =() => import('../views/Chat.vue')
+const Calendar =() => import('../views/calendar/calendar.vue')
 
 Vue.use(VueRouter)
 
@@ -19,6 +21,14 @@ const routes = [
   {
     path: '/about',
     component: About
+  },
+  {
+    path: '/chat',
+    component: Chat
+  },
+  {
+    path: '/calendar',
+    component: Calendar
   }
 ]
 
