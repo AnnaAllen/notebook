@@ -4,8 +4,10 @@ import VueRouter from 'vue-router'
 //懒加载
 const Home =() => import('../views/Home.vue')
 const About =() => import('../views/About.vue')
-const Chat =() => import('../views/Chat.vue')
+const Chat =() => import('../views/chat/Chat.vue')
 const Calendar =() => import('../views/calendar/calendar.vue')
+const Publish =() => import('../views/publish/publish.vue')
+const Search =() => import('../views/search/search.vue')
 
 Vue.use(VueRouter)
 
@@ -29,6 +31,14 @@ const routes = [
   {
     path: '/calendar',
     component: Calendar
+  },
+  {
+    path: '/publish',
+    component: Publish
+  },
+  {
+    path: '/search',
+    component: Search
   }
 ]
 

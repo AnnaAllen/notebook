@@ -4,17 +4,19 @@
       <div slot='left'>
         <i class="el-icon-date"
             @click="calendar"></i>
-        <i class="el-icon-search"></i>
+        <i class="el-icon-search"
+            @click='search'></i>
       </div>
       <div slot='center'>全部
         <i class="el-icon-arrow-down"></i>
       </div>
       <div slot='right'>
-        <i class="el-icon-edit"></i>
+        <i class="el-icon-edit"
+            @click='publish'></i>
       </div>
     </nav-bar>
     <diary-item :diaryInfo='diaryInfo'/>
-    
+     <nav-bar-down/>
     
     
 
@@ -26,12 +28,14 @@
 
 import navBar from '../components/common/navbar.vue'
 import diaryItem from '../components/common/diary.vue'
+import navBarDown from '../components/common/navBarDown.vue'
 
 export default {
   name: 'Home',
   components: {
     navBar,
-    diaryItem
+    diaryItem,
+    navBarDown
   },
   data() {
     return {
@@ -55,14 +59,20 @@ export default {
           content: '今天要上课'
         }
       ],
-      isCaldenarLink: '/calendar'
+      isCaldenarLink: '/calendar',
+      isPublishLink: '/publish',
+      isSearch: '/search'
     }
   },
   methods: {
     calendar() {
-      
-        this.$router.replace(this.isCaldenarLink)
-      
+        this.$router.replace(this.isCaldenarLink)  
+    },
+    publish() {
+      this.$router.replace(this.isPublishLink)
+    },
+    search() {
+      this.$router.replace(this.isSearch)
     }
   }
   
@@ -73,7 +83,7 @@ export default {
   .home {
     height: 100vh;
     background-color: rgba(0,0,0,.05);
-    /*overflow: hidden;*/
+    overflow: hidden;
   }
   .home-nav {
     background-color: pink;
