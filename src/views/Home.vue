@@ -7,8 +7,9 @@
         <i class="el-icon-search"
             @click='search'></i>
       </div>
-      <div slot='center'>全部
-        <i class="el-icon-arrow-down"></i>
+      <div slot='center' @click='filtrate'>全部
+        <i class="el-icon-arrow-down" v-if='!isFiltrate'></i>
+        <i class="el-icon-arrow-up" v-else></i>
       </div>
       <div slot='right'>
         <i class="el-icon-edit"
@@ -16,8 +17,7 @@
       </div>
     </nav-bar>
     <diary-item :diaryInfo='diaryInfo'/>
-    
-    
+    <home-filtrate v-show='isFiltrate'/>
     
 
   </div>
@@ -29,11 +29,14 @@
 import navBar from '../components/common/navbar.vue'
 import diaryItem from '../components/common/diary.vue'
 
+import homeFiltrate from './HomeChild/filtrate.vue'
+
 export default {
   name: 'Home',
   components: {
     navBar,
     diaryItem,
+    homeFiltrate
   },
   data() {
     return {
@@ -59,7 +62,8 @@ export default {
       ],
       isCaldenarLink: '/calendar',
       isPublishLink: '/publish',
-      isSearch: '/search'
+      isSearch: '/search',
+      isFiltrate: false
     }
   },
   methods: {
@@ -71,6 +75,9 @@ export default {
     },
     search() {
       this.$router.replace(this.isSearch)
+    },
+    filtrate() {
+      this.isFiltrate = !this.isFiltrate
     }
   }
   
@@ -81,7 +88,7 @@ export default {
   .home {
     height: 100vh;
     background-color: rgba(0,0,0,.05);
-    overflow: hidden;
+    /*overflow: hidden;*/
   }
   .home-nav {
     background-color: pink;
