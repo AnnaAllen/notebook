@@ -74,7 +74,6 @@
         return this.isActive3 ? {color: this.styleColor} : {}
       }
     }
-
 }
 </script>
 

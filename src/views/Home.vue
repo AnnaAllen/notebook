@@ -16,7 +16,7 @@
       </div>
     </nav-bar>
     <diary-item :diaryInfo='diaryInfo'/>
-     <nav-bar-down/>
+    
     
     
 
@@ -28,14 +28,12 @@
 
 import navBar from '../components/common/navbar.vue'
 import diaryItem from '../components/common/diary.vue'
-import navBarDown from '../components/common/navBarDown.vue'
 
 export default {
   name: 'Home',
   components: {
     navBar,
     diaryItem,
-    navBarDown
   },
   data() {
     return {

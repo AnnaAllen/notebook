@@ -2,13 +2,16 @@
   <div class="chat-nav-bar">
     <div class="left"></div>
     <div class="center">
-      <div @click='butAcitve1'>
+      <div @click='butAcitve1'
+            :class='{active:isAcitve1}'>
         <p>最新</p>
       </div>
-      <div @click='butAcitve2'>
+      <div @click='butAcitve2'
+            :class='{active:isAcitve2}'>
         <p>热门</p>
       </div>
-      <div @click='butAcitve3'>
+      <div @click='butAcitve3'
+            :class='{active:isAcitve3}'>
         <p>我的</p>
       </div>
     </div>
@@ -32,12 +35,12 @@
         this.isAcitve2 = false
         this.isAcitve3 = false
       },
-      butAcitve1() {
+      butAcitve2() {
         this.isAcitve1 = false
         this.isAcitve2 = true
         this.isAcitve3 = false
       },
-      butAcitve1() {
+      butAcitve3() {
         this.isAcitve1 = false
         this.isAcitve2 = false
         this.isAcitve3 = true
@@ -47,6 +50,9 @@
 </script>
 
 <style scoped>
+  .active {
+    border-bottom: 3px solid white;
+  }
   .chat-nav-bar {
     display: flex;
     height: 44px;
